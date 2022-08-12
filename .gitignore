@@ -37,4 +37,5 @@ dump.rdb
 
 /static/
 /protos/*.go
+/protos_temp
 !/protos/coding.go
