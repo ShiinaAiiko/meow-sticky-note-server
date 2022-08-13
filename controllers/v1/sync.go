@@ -406,7 +406,7 @@ func (fc *SyncController) SyncToServer(c *gin.Context) {
 		sc := conf.SocketIO
 		getConnContext := sc.GetConnContextByTag(conf.SocketRouterNamespace["Sync"], "Uid", nstrings.ToString(authorId))
 		// log.Info("当前ID", c.ID())
-		log.Info("有哪些设备在线", getConnContext)
+		// log.Info("有哪些设备在线", getConnContext)
 		for _, v := range getConnContext {
 			if v.GetSessionCache("deviceId") == deviceId {
 				continue
@@ -570,7 +570,7 @@ func (fc *SyncController) GetNote(c *gin.Context) {
 
 	// 4、获取Note
 	note, err := syncDbx.GetNoteBySAaSS(data.Id, authorId)
-	log.Info(note.Id, err, data.Id, authorId)
+	// log.Info(note.Id, err, data.Id, authorId)
 	if err != nil {
 		res.Error = err.Error()
 		res.Code = 10021

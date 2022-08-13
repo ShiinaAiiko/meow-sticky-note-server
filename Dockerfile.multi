@@ -37,14 +37,9 @@ RUN \
 COPY . . 
 
 RUN \
-  ls  && \
   cd ./protos_temp && \
   protoc --go_out=../protos *.proto && \
-  ls  && \
-  cd ../protos && \
-  ls  && \
   cd .. && \
-  ls  && \
   go build -o meow-sticky-note main.go
 
 FROM alpine:3.10
