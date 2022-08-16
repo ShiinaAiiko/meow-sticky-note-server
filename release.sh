@@ -5,7 +5,7 @@ branch="main"
 # configFilePath="config.dev.json"
 configFilePath="config.test.json"
 DIR=$(cd $(dirname $0) && pwd)
-allowMethods=("stop gitpull proto dockerremove start logs")
+allowMethods=("stop gitpull protos dockerremove start logs")
 
 gitpull() {
   echo "-> 正在拉取远程仓库"
@@ -21,7 +21,7 @@ dockerremove() {
 
 start() {
   echo "-> 正在启动「${name}」服务"
-  gitpull
+  # gitpull
   dockerremove
 
   echo "-> 正在准备相关资源"
@@ -51,7 +51,7 @@ stop() {
   docker stop $name
 }
 
-proto() {
+protos() {
   echo "-> 准备编译Protobuf"
   cp -r ../protos $DIR/protos_temp
   # cd ./protos && protoc --go_out=. *.proto

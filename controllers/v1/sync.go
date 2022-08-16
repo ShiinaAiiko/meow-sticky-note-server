@@ -69,7 +69,7 @@ func (fc *SyncController) SyncToServer(c *gin.Context) {
 	authorId := c.MustGet("userInfo").(*sso.UserInfo).Uid
 	deviceId := c.MustGet("deviceId").(string)
 
-	log.Info("add", data.Type, data.Methods, data.Options)
+	// log.Info("add", data.Type, data.Methods, data.Options)
 
 	// 4 获取Note
 	var note *protos.NoteItem
@@ -503,7 +503,7 @@ func (fc *SyncController) GetFolderFiles(c *gin.Context) {
 	path, _ := methods.GetPathAndFileName("", authorId)
 
 	files, err := conf.SAaSS.GetFolderFiles(path)
-	// log.Info("files", files)
+	log.Info("files", path, files)
 	if err != nil {
 		res.Error = err.Error()
 		res.Code = 10020

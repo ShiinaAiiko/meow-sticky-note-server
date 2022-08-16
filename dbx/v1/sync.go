@@ -35,7 +35,7 @@ func (s *SyncDbx) GetNoteBySAaSS(noteId string, authorId int64) (*protos.NoteIte
 	// log.Info("GetNoteBySAaSS", path, fileName)
 	if err != nil {
 		reader, err := conf.SAaSS.GetFile(path, fileName)
-		// log.Info("GetFile", reader, err)
+		log.Info("GetFile", reader, err, path, fileName)
 		if err != nil {
 			return nil, err
 		}
@@ -66,6 +66,7 @@ func (s *SyncDbx) DeleteNote(noteId string, authorId int64) error {
 	}
 	path, fileName := methods.GetPathAndFileName(noteId, authorId)
 
+	log.Info("path, fileName", path, fileName)
 	return conf.SAaSS.DeleteFile(path, fileName, time.Now().Add(30*24*3600*time.Second))
 }
 
