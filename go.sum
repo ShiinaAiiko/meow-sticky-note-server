@@ -2,7 +2,7 @@ github.com/cespare/xxhash/v2 v2.1.2 h1:YRXhKfTDauu4ajMg1TPgFO5jnlC2HCbmLXMcTG5cb
 github.com/cespare/xxhash/v2 v2.1.2/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=
 github.com/cherrai/nyanyago-utils v1.0.0 h1:Z+nn+O6BKPfBH9Im5nQ5mewhX7mGeeAaTR9bwDYULmM=
 github.com/cherrai/nyanyago-utils v1.0.0/go.mod h1:EzjC02kswYjajvTZVI1QTnMEKCbQlJYma9lx5UcLgXc=
-github.com/cherrai/saki-sso-go v1.0.0 h1:ldlPFUMqHkWl+/vyZ5Jn7tj0/bMCKhms2cWCwwhQkRQ=
+github.com/cherrai/saki-sso-go v1.0.0 h1:0p/VLaWfD6jca0VNfpRbrv+WZHJZLyxiK+XEtNzQ0Fw=
 github.com/cherrai/saki-sso-go v1.0.0/go.mod h1:dbx8ibzQibFJSMe2EV2S6AxH2+VPmlm7ttyT53+IRxA=
 github.com/chzyer/logex v1.1.10/go.mod h1:+Ywpsq7O8HXn0nuIou7OrIPyXbp3wmkHB+jjWRnGsAI=
 github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e/go.mod h1:nSuG5e5PlCu98SY8svDHJxuZscDgtXS6KTTbou5AhLI=
