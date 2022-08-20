@@ -35,7 +35,7 @@ func (s *SyncDbx) GetNoteBySAaSS(noteId string, authorId int64) (*protos.NoteIte
 	// log.Info("GetNoteBySAaSS", path, fileName)
 	if err != nil {
 		reader, err := conf.SAaSS.GetFile(path, fileName)
-		log.Info("GetFile", reader, err, path, fileName)
+		// log.Info("GetFile", reader, err, path, fileName)
 		if err != nil {
 			return nil, err
 		}
