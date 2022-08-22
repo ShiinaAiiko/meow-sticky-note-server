@@ -1,68 +1,60 @@
 package mongodb
 
-import (
-	"context"
+// var (
+// 	Log = nlog.New()
+// )
+// var mongoClient *mongo.Client
+// var mongoClients map[string]*mongo.Client
 
-	"github.com/cherrai/nyanyago-utils/nlog"
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
-)
+// func ConnectMongoDB(uri string, database string) {
+// 	if mongoClient == nil {
+// 		mongoClients = make(map[string]*mongo.Client)
+// 	}
+// 	// Set client options
+// 	clientOptions := options.Client().ApplyURI(uri)
 
-var (
-	Log = nlog.New()
-)
-var mongoClient *mongo.Client
-var mongoClients map[string]*mongo.Client
+// 	// Connect to MongoDB
+// 	client, err := mongo.Connect(context.TODO(), clientOptions)
 
-func ConnectMongoDB(uri string, database string) {
-	if mongoClient == nil {
-		mongoClients = make(map[string]*mongo.Client)
-	}
-	// Set client options
-	clientOptions := options.Client().ApplyURI(uri)
+// 	mongoClient = client
 
-	// Connect to MongoDB
-	client, err := mongo.Connect(context.TODO(), clientOptions)
+// 	mongoClients[database] = client
 
-	mongoClient = client
+// 	if err != nil {
+// 		Log.Error(err)
+// 		return
+// 	}
 
-	mongoClients[database] = client
+// 	// Check the connection
+// 	err = client.Ping(context.TODO(), nil)
 
-	if err != nil {
-		Log.Error(err)
-		return
-	}
+// 	if err != nil {
+// 		Log.Error(err)
+// 		return
+// 	}
 
-	// Check the connection
-	err = client.Ping(context.TODO(), nil)
+// 	// ash := Trainer{"Ash", 10, "Pallet Town"}
 
-	if err != nil {
-		Log.Error(err)
-		return
-	}
+// 	// brock := Trainer{"Brock", 15, "Pewter City"}
 
-	// ash := Trainer{"Ash", 10, "Pallet Town"}
+// 	// trainers := []interface{}{misty, brock}
+// 	// insertResult, err := collection.InsertOne(context.TODO(), ash)
 
-	// brock := Trainer{"Brock", 15, "Pewter City"}
+// 	Log.Info("Connected to MongoDB<" + database + ">!")
 
-	// trainers := []interface{}{misty, brock}
-	// insertResult, err := collection.InsertOne(context.TODO(), ash)
+// 	// err = client.Disconnect(context.TODO())
 
-	Log.Info("Connected to MongoDB<" + database + ">!")
+// 	// if err != nil {
+// 	// 	log.Fatal(err)
+// 	// }
+// 	// fmt.Println("Connection to MongoDB closed.")
+// }
 
-	// err = client.Disconnect(context.TODO())
-
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// fmt.Println("Connection to MongoDB closed.")
-}
-
-func GetMongoCollection(collectionName string) *mongo.Collection {
-	collection := mongoClient.Database("github.com/cherrai/SAaSS").Collection(collectionName)
-	return collection
-}
-func GetCollection(database string, collectionName string) *mongo.Collection {
-	collection := mongoClients[database].Database(database).Collection(collectionName)
-	return collection
-}
+// func GetMongoCollection(collectionName string) *mongo.Collection {
+// 	collection := mongoClient.Database("github.com/cherrai/SAaSS").Collection(collectionName)
+// 	return collection
+// }
+// func GetCollection(database string, collectionName string) *mongo.Collection {
+// 	collection := mongoClients[database].Database(database).Collection(collectionName)
+// 	return collection
+// }

@@ -3,7 +3,7 @@ name="meow-sticky-note-server"
 port=16110
 branch="main"
 # configFilePath="config.dev.json"
-configFilePath="config.test.json"
+configFilePath="config.pro.json"
 DIR=$(cd $(dirname $0) && pwd)
 allowMethods=("stop gitpull protos dockerremove start logs")
 

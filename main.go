@@ -5,7 +5,6 @@ import (
 	"os"
 
 	conf "github.com/ShiinaAiiko/meow-sticky-note/server/config"
-	mongodb "github.com/ShiinaAiiko/meow-sticky-note/server/db/mongo"
 	redisdb "github.com/ShiinaAiiko/meow-sticky-note/server/db/redis"
 	"github.com/ShiinaAiiko/meow-sticky-note/server/services/gin_service"
 	"github.com/ShiinaAiiko/meow-sticky-note/server/services/socketio_service"
@@ -72,13 +71,13 @@ func main() {
 		})
 
 		conf.SAaSS = saass.New(&saass.Options{
-			AppId:      "1e816914-64d2-477a-8e35-427d947ecf50",
-			AppKey:     "0cbd470b-5091-418a-8cfd-4349404879b9",
-			BaseUrl:    conf.Config.StaticPathDomain,
-			ApiVersion: "v1",
+			AppId:      conf.Config.Saass.AppId,
+			AppKey:     conf.Config.Saass.AppKey,
+			BaseUrl:    conf.Config.Saass.BaseUrl,
+			ApiVersion: conf.Config.Saass.ApiVersion,
 		})
 		// Connect to mongodb.
-		mongodb.ConnectMongoDB(conf.Config.Mongodb.Currentdb.Uri, conf.Config.Mongodb.Currentdb.Name)
+		// mongodb.ConnectMongoDB(conf.Config.Mongodb.Currentdb.Uri, conf.Config.Mongodb.Currentdb.Name)
 
 		// syncDbx := new(dbxV1.SyncDbx)
 

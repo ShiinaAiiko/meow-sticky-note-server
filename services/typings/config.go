@@ -1,11 +1,12 @@
 package typings
 
 type Config struct {
-	Server           Server
-	SSO              Sso
-	Redis            Redis
-	StaticPathDomain string
-	Mongodb          Mongodb
+	Server Server
+	SSO    Sso
+	Saass  SAaSS
+	Redis  Redis
+	// StaticPathDomain string
+	// Mongodb          Mongodb
 }
 
 type Server struct {
@@ -20,6 +21,12 @@ type Sso struct {
 	AppId  string
 	AppKey string
 	Host   string
+}
+type SAaSS struct {
+	AppId      string
+	AppKey     string
+	BaseUrl    string
+	ApiVersion string
 }
 type Redis struct {
 	Addr     string
