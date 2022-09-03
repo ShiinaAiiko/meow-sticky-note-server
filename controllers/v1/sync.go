@@ -503,7 +503,7 @@ func (fc *SyncController) GetFolderFiles(c *gin.Context) {
 	path, _ := methods.GetPathAndFileName("", authorId)
 
 	files, err := conf.SAaSS.GetFolderFiles(path)
-	log.Info("files", path, files)
+	// log.Info("files", err, path, files)
 	if err != nil {
 		res.Error = err.Error()
 		res.Code = 10020
