@@ -225,7 +225,7 @@ func (s *SyncControllers) NewConnect(e *nsocketio.EventInstance) error {
 	// 	}
 	// }
 
-	return nil
+	// return nil
 }
 
 func (s *SyncControllers) Disconnect(e *nsocketio.EventInstance) error {
