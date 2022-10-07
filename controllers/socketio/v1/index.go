@@ -71,6 +71,7 @@ func (bc *BaseControllers) NewConnect(e *nsocketio.EventInstance) error {
 		// log.Info("getUser", getUser)
 		// 	// 检测之前是否登录过了，登录过把之前的实例干掉
 		for _, v := range conf.SocketIO.GetConnContextByTag(conf.SocketRouterNamespace["Base"], "DeviceId", getUser.Payload.UserAgent.DeviceId) {
+			log.Info(v.Conn.ID(), Conn.ID())
 			if v.Conn.ID() == Conn.ID() {
 				continue
 			}
