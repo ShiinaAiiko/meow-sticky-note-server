@@ -132,6 +132,11 @@ func (fc *SyncController) SyncToServer(c *gin.Context) {
 		case "Update":
 			note.Name = data.Data.Note.Name
 			note.LastUpdateTime = data.Data.Note.LastUpdateTime
+			note.Categories = data.Data.Note.Categories
+
+			// log.Info(note.Name)
+			// log.Info(note.Categories)
+			// log.Info(data.Data.Note.Categories)
 		case "Delete":
 			if err = validation.ValidateStruct(
 				data.Options,
@@ -378,6 +383,7 @@ func (fc *SyncController) SyncToServer(c *gin.Context) {
 	// log.Info("note", note)
 	lastUpdateTime := int64(0)
 
+	log.Info(data.Type != "Note" || (data.Type == "Note" && data.Methods == "Update"))
 	if data.Type != "Note" || (data.Type == "Note" && data.Methods == "Update") {
 
 		lastUpdateTime = time.Now().Unix()
