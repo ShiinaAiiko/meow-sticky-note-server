@@ -110,26 +110,3 @@ func Response() gin.HandlerFunc {
 		}
 	}
 }
-
-// fmt.Println(test.GetName())
-
-// data, err := proto.Marshal(test)
-// var msgData interface{}
-// msgData = test
-// msg, _ := proto.Marshal(msgData.(proto.Message))
-// fmt.Println("msg", msg, "::::", string(msg))
-// fmt.Println("data", data)
-// // fmt.Println("data", string(data))
-// if err != nil {
-// 	log.Fatal("marshaling error: ", err)
-// }
-// newTest := &Student{}
-// err = proto.Unmarshal(data, newTest)
-// fmt.Println("newTest", newTest)
-// if err != nil {
-// 	log.Fatal("unmarshaling error: ", err)
-// }
-// // Now test and newTest contain the same data.
-// if test.GetName() != newTest.GetName() {
-// 	log.Fatalf("data mismatch %q != %q", test.GetName(), newTest.GetName())
-// }

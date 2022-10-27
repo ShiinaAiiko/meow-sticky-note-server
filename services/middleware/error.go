@@ -40,37 +40,6 @@ func Error() gin.HandlerFunc {
 				}
 				res.Call(c)
 				c.Abort()
-				// fmt.Println("=========Error=========")
-				// // fmt.Println("roles2", roles)
-				// fmt.Println("Error middleware:", err)
-				// switch roles.ResponseDataType {
-				// case "protobuf":
-				// 	fmt.Println("输出protobuf Err")
-				// 	userAesKey, _ := c.Get("userAesKey")
-				// 	fmt.Println(userAesKey)
-				// 	var res response.ResponseProtobufType
-				// 	res.Code = 10001
-				// 	res.Call(c)
-				// 	break
-
-				// default:
-				// 	res := response.ResponseType{
-				// 		Code: 10001,
-				// 	}
-				// 	switch reflect.TypeOf(err).String() {
-				// 	case "string":
-				// 		res.Data = err.(string)
-				// 		break
-				// 	case "*errors.errorString":
-				// 		res.Data = err.(error).Error()
-				// 		break
-
-				// 	}
-				// 	res.Call(c)
-				// 	break
-				// }
-
-				// fmt.Println("=========Error=========")
 			}
 		}()
 		c.Next()
