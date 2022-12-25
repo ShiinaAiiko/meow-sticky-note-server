@@ -6,7 +6,7 @@ type Config struct {
 	Saass  SAaSS
 	Redis  Redis
 	// StaticPathDomain string
-	// Mongodb          Mongodb
+	Mongodb Mongodb
 }
 
 type Server struct {
